@@ -1,0 +1,35 @@
+<form (submit)="addEmployee()">
+  <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Novo Empregado</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input class="form-control" type="text" [(ngModel)]="employee.name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="salario">Salário</label>
+              <input class="form-control" type="text" [(ngModel)]="employee.salary" name="salary">
+            </div>
+            <div class="form-group" [hidden]="employee.salary >= 1000">
+              <label for="bonus">Bonus</label>
+              <input class="form-control" type="text" [(ngModel)]="employee.bonus" name="bonus">
+            </div>  
+    
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="submit"
+                    class="btn btn-primary">Incluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>

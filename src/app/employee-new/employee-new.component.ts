@@ -20,6 +20,7 @@ export class EmployeeNewComponent implements OnInit {
   }
 
   addEmployee() {
-    this.employeeService.addEmployee(this.employee);
+    const copy = Object.assign({}, this.employee);
+    this.employeeService.addEmployee(copy);
   }
 }
